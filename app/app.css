@@ -117,7 +117,7 @@ form {
 }
 
 @utility bg-gradient {
-    background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
+    background: linear-gradient(to bottom, #f0f4ff 60%, rgba(250, 113, 113, 0.8));
 }
 
 @utility text-gradient {
