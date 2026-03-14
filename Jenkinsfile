@@ -57,8 +57,8 @@ pipeline {
         
         stage('Build Docker Image') {
             when {
-                branch 'main'
-            }
+            branch '**/main'          
+                        }
             steps {
                 echo '========== Building Docker image =========='
                 script {
@@ -77,8 +77,8 @@ pipeline {
         
         stage('Push to Docker Hub') {
             when {
-                branch 'main'
-            }
+            branch '**/main'          
+                        }
             steps {
                 echo '========== Pushing Docker image to Docker Hub =========='
                 script {
