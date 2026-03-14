@@ -117,15 +117,14 @@ pipeline {
         }
         success {
             echo '✅ Pipeline completed successfully!'
-            sh '''
-                echo "Build Summary:"
-                echo "- Build Status: SUCCESS"
-                echo "- Build Number: ${BUILD_NUMBER}"
-                echo "- Git Commit: ${GIT_COMMIT:0:7}"
-                echo "- Branch: ${GIT_BRANCH}"
-                echo "- Docker Image: ${DOCKER_IMAGE_NAME}:${BUILD_TIMESTAMP}"
-            '''
-        }
+sh '''
+echo "Build Summary:"
+echo "- Build Status: SUCCESS"
+echo "- Build Number: ${BUILD_NUMBER}"
+echo "- Git Commit: ${GIT_COMMIT}"
+echo "- Branch: ${GIT_BRANCH}"
+echo "- Docker Image: ${DOCKER_IMAGE_NAME}:${BUILD_TIMESTAMP}"
+'''        }
         failure {
             echo '❌ Pipeline failed! Check logs above for details.'
         }
